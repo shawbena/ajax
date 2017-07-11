@@ -1,23 +1,27 @@
-# ajax(options, success, error);
+# ajax
 
-`options`: <Object>
-- `url`: <String>, required
-- `method`: <String>, optiional, default: 'get'
-- `async` : <Boolean>, optional, default: true,
-- `user`: <String>, optional
-- `password`: <String>, optional
-- `headers`: <Object>, <key, value> pairs, optional
-- `data`: <Object>, <key, value> pairs
-- `responseType`: <String>, optional, default: 'josn', more at https://developer.mozilla.org/en-US/docs/Web/API/XMLHttpRequest/responseType
+## ajax(options, success, error);
 
-`success`: <Function>, required
-`error`: <Function>, optional
+`options`: `<Object>`
 
-# get 方法
+- `url`: `<String>`, required
+- `method`: `<String>`, optiional, default: `get`
+- `async` : `<Boolean>`, optional, default: `true`,
+- `user`: `<String>`, optional
+- `password`: `<String>`, optional
+- `headers`: `<Object>`, <key, value> pairs, optional
+- `data`: `<Object>`, <key, value> pairs
+- `responseType`: `<String>`, optional, default: 'josn', [and more...](https://developer.mozilla.org/en-US/docs/Web/API/XMLHttpRequest/responseType)
+
+`success`: `<Function>`, required
+
+`error`: `<Function>`, optional
+
+## get 方法
 
 get 方法可以传 data, url 中可以有查询字符串
 
-# post 方法
+## post 方法
 
 默认 Content-Type 为 application/x-www-form-urlencoded
 
