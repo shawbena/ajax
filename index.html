@@ -1,0 +1,46 @@
+<!DOCTYPE html>
+<html lang="en">
+
+<head>
+    <title></title>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1">
+    <link href="css/style.css" rel="stylesheet">
+</head>
+
+<body>
+    <form id="new_user_form" method="get" target="_self">
+        <div>
+            <label>用户名</label>
+            <input type="text" name="userName" value="">
+        </div>
+        <div>
+            <label>口令</label>
+            <input type="password" name="pwd" value="">
+        </div>
+        <input type="submit" value="提交">
+    </form>
+    <form id="upload_user_info">
+        <input type="file" name="userInfo"><br>
+        <input type="text" name="email"><br>
+        <input type="submit" value="上传">
+    </form>
+    <form action="/user/info/upload" method="post" enctype="multipart/form-data">
+        <input type="file" name="userInfo"><br>
+        <input type="text" name="email"><br>
+        <input type="submit" value="上传">
+    </form>
+    <button id="user_info_btn">点击获取用户信息</button>
+    <form action="/user/info">
+        <input type="text" name="pageNum" value="1"><br>
+        <input type="text" name="pageSize" value="2"><br>
+        <input type="submit" value="点击获取用户信息">
+    </form>
+    <div>
+        用户信息列表
+        <button type="button" id="get_user_info">获取用户信息</button>
+    </div>
+</body>
+<script src="/dist/require.js" data-main="/dist/main.js"></script>
+
+</html>
