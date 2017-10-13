@@ -1,15 +1,7 @@
 {
-    "ignore": [
-        "src/require.js",
-        "src/main.js"
-    ],
-    "comments": false,
-    "minified": false,
     "presets": [
-        "es2015"
+        "env"
     ],
     "plugins": [
-        "transform-class-properties",
-        "transform-es2015-modules-amd"
     ]
 }
