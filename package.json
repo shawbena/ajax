@@ -4,8 +4,7 @@
   "version": "0.2.0",
   "private": true,
   "scripts": {
-    "dev": "webpack",
-    "build": "webpack --env.production"
+    "build": "rm -rvf dist && webpack"
   },
   "dependencies": {
     "querystring": "^0.2.0"

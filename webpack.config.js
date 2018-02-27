@@ -21,7 +21,6 @@ const common = {
         ]
     },
     plugins: [
-        new CleanWebpackPlugin(['dist'])
     ],
     externals: {
         querystring: {
@@ -60,10 +59,7 @@ const prod = {
     ]
 };
 
-module.exports = (env) => {
-    if (env && env.production) {
-        return merge(common, prod);
-    }
-
-    return merge(common, dev);
-};
+module.exports = [
+    merge(common, dev),
+    merge(common, prod)
+];
