@@ -23,15 +23,31 @@ const common = {
     plugins: [
         new CleanWebpackPlugin(['dist'])
     ],
-    externals: ['querystring']
+    externals: {
+        querystring: {
+            commonjs: 'querystring',
+            commonjs2: 'querystring',
+            amd: 'querystring',
+            root: 'queryString'
+        },
+        path: {
+            commonjs: 'path',
+            commonjs2: 'path',
+            amd: 'path',
+            root: 'path'
+        }
+    }
 };
 
-const dev = merge(common, {
-    devtool: 'inline-source-map'
-});
+const dev = {
+    devtool: 'cheap-source-map'
+};
 
-const prod = merge(common, {
-    devtool: 'source-map',
+const prod = {
+    devtool: 'nosource-source-map',
+    output: {
+        filename: 'ajax.min.js',
+    },
     plugins: [
         new UglifyJSPlugin({
             sourceMap: true
@@ -42,6 +58,12 @@ const prod = merge(common, {
             }
         })
     ]
-});
+};
 
-module.exports = prod;
+module.exports = (env) => {
+    if (env && env.production) {
+        return merge(common, prod);
+    }
+
+    return merge(common, dev);
+};
