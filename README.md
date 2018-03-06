@@ -84,4 +84,4 @@ ajax({
 
 ## LISCENSE
 
-MTI liscense.
+MIT liscense.
